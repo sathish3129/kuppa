@@ -39,8 +39,10 @@ greet_me_other("a","v", name="yasoob",aname="ayasoob")
 print("-------")
 greet_me(name="yasoob",aname="ayasoob")
 high = None
-low = 1
+low = 11
 if high == None:
-  low, high = 0, low 
+  low, high = 0, low  # swap
 
-print("{0} = {1}".format(low, high))
+print("Low = {0}, High = {1}".format(low, high))
+
+print(*range(5), sep=", ")
