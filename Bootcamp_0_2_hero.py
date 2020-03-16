@@ -1,12 +1,3 @@
-'''
-
-                            Online Python Compiler.
-                Code, Compile, Run and Debug python program online.
-Write your code in this editor and press "Run" button to execute it.
-
-'''
-
-
 def Basic():
     st = 'Print only the words that start with s in this sentence'
 
@@ -63,7 +54,8 @@ def myfunc(word):
 # FizzBuzz()
 # myfunc('ahgdsfhsdfhsdfhskdfhkdf')
 
-# LESSER OF TWO EVENS: Write a function that returns the lesser of two given numbers if both numbers are even, but returns the greater if one or both numbers are odd¶
+# LESSER OF TWO EVENS: Write a function that returns the lesser of two given numbers if both numbers are even,
+# but returns the greater if one or both numbers are odd¶
 def lesser_of_two_evens(a, b):
     if a % 2 == 0 and b % 2 == 0:
         return min(a, b)
@@ -83,7 +75,8 @@ def animal_crackers(text):
 # print(animal_crackers('Levelheaded Llama'))
 # print(animal_crackers('Crazy Kangaroo'))
 
-# MAKES TWENTY: Given two integers, return True if the sum of the integers is 20 or if one of the integers is 20. If not, return False
+# MAKES TWENTY: Given two integers, return True if the sum of the integers is 20 or if one of the integers is 20.
+# If not, return False
 def makes_twenty(a, b):
     return a + b == 20 or a == 20 or b == 20
 
@@ -220,3 +213,45 @@ spy_game([1,0,2,4,0,5,7,7])
 spy_game([1,0,0,2,4,0,5,7])
 spy_game([1,7,2,0,4,5,0])
 """
+
+
+def count_primes(num):
+    x = 3
+    primer = [2]
+    if num <= 2:
+        return 0
+    else:
+        while x <= num:
+            if is_prime(x):
+                primer.append(x)
+            x += 1
+    print(primer)
+    print(len(primer))
+
+
+def is_prime(num):
+    for i in range(2, num):
+        if (num % i) == 0:
+            return False
+    return True
+
+
+# count_primes(100)
+
+
+# PRINT BIG: Write a function that takes in a single letter, and returns a 5x5 representation of that letter
+def print_big(letter):
+    patterns = {1: '  *  ', 2: ' * * ', 3: '*   *', 4: '*****', 5: '**** ', 6: '   * ', 7: ' *   ', 8: '*   * ',
+                9: '*    '}
+    alphabet = {'A': [1, 2, 4, 3, 3], 'B': [5, 3, 5, 3, 5], 'C': [4, 9, 9, 9, 4], 'D': [5, 3, 3, 3, 5],
+                'E': [4, 9, 4, 9, 4]}
+    if letter.upper() not in alphabet:
+        print('Not dictionary')
+        return
+
+    for pattern in alphabet[letter.upper()]:
+        print(patterns[pattern])
+
+
+# print_big('a')
+print_big('G')
